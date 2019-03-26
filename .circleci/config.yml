@@ -4,7 +4,9 @@ jobs:
       - image: evillhood/arch-builder:latest
     steps:
       - run: |
+          pwd
           cd /data
+          pwd
           git clone https://github.com/enree/shakespear.git
           sh ./configure.sh
           cmake 
