@@ -9,4 +9,4 @@ jobs:
           pwd          
           git clone https://github.com/enree/appkit.git
           cd appkit
-          cmake 
+          cmake .
