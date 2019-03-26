@@ -6,7 +6,8 @@ jobs:
       - run: |
           pwd
           cd /data
-          pwd
-          git clone https://github.com/enree/shakespear.git
+          pwd          
+          git clone https://github.com/enree/appkit.git
+          cd appkit
           sh ./configure.sh
           cmake 
