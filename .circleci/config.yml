@@ -1,0 +1,10 @@
+jobs:
+  build:
+    docker:
+      - image: evillhood/arch-builder:latest
+    steps:
+      - run: |
+          cd /data
+          git clone https://github.com/enree/shakespear.git
+          sh ./configure.sh
+          cmake 
