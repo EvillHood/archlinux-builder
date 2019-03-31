@@ -7,7 +7,7 @@ jobs:
           pwd
           cd /data
           pwd          
-          git clone https://github.com/enree/appkit.git
-          cd appkit
+          git clone https://github.com/enree/shakespear.git
+          cd shakespear
           sh configure.sh
           cmake .
