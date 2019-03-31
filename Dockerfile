@@ -16,6 +16,8 @@ RUN pacman -S core/gettext --noconfirm
 RUN pacman -S git --noconfirm
 RUN pacman -S core/openssh --noconfirm
 RUN pacman -S core/make --noconfirm
+RUN pacman -S which --noconfirm
+RUN pacman -S qt5-tools --noconfirm
 
 # docker settings
 #################
