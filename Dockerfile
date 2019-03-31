@@ -1,5 +1,5 @@
 FROM archlinux/base
-MAINTAINER red wine
+MAINTAINER EvillHood
 
 # install packages
 #############
