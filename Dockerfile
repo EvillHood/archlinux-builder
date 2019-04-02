@@ -19,6 +19,10 @@ RUN pacman -S core/make --noconfirm
 RUN pacman -S which --noconfirm
 RUN pacman -S qt5-tools --noconfirm
 
+#voodoo magic
+#############
+RUN set -x; strip --remove-section=.note.ABI-tag /usr/lib/libQt5Core.so.5
+
 # docker settings
 #################
 
