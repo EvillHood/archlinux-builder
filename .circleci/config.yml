@@ -4,6 +4,7 @@ jobs:
       - image: evillhood/arch-builder:latest
     steps:
       - run: |
+          uname -a
           pwd
           cd /data
           pwd          
