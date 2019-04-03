@@ -18,12 +18,14 @@ RUN pacman -S core/openssh --noconfirm
 RUN pacman -S core/make --noconfirm
 RUN pacman -S which --noconfirm
 RUN pacman -S qt5-tools --noconfirm
-RUN pacman -S gammaray --noconfirm
-RUN pacman -Suy --noconfirm
 
 #voodoo magic
 #############
 RUN set -x; strip --remove-section=.note.ABI-tag /usr/lib/libQt5Core.so.5
+
+#build gammaray
+#############
+RUN git clone git://github.com/KDAB/GammaRay.git; cd GammaRay; cmake -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/gammaray .; cmake --build build --target install -j8;
 
 # docker settings
 #################
