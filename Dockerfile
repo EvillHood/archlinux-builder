@@ -17,6 +17,7 @@ RUN pacman -S core/openssh --noconfirm
 RUN pacman -S core/make --noconfirm
 RUN pacman -S which --noconfirm
 RUN pacman -S qt5-tools --noconfirm
+RUN pacman -S extra/qt5-svg --noconfirm
 RUN pacman -Suy --noconfirm
 
 #voodoo magic
