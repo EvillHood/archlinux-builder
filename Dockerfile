@@ -3,24 +3,24 @@ MAINTAINER EvillHood
 
 # install packages
 #############
-RUN pacman -Sy extra/cmake --noconfirm
-RUN pacman -S extra/qt5-base --noconfirm
-RUN pacman -S extra/boost --noconfirm
-RUN pacman -S extra/boost-libs --noconfirm
-RUN pacman -S core/gcc --noconfirm
-RUN pacman -S extra/clang --noconfirm 
-RUN pacman -S community/cppcheck --noconfirm  
-RUN pacman -S extra/clazy --noconfirm
-RUN pacman -S core/gettext --noconfirm
-RUN pacman -S git --noconfirm
-RUN pacman -S core/openssh --noconfirm
-RUN pacman -S core/make --noconfirm
-RUN pacman -S which --noconfirm
-RUN pacman -S qt5-tools --noconfirm
-RUN pacman -S extra/qt5-svg --noconfirm
-RUN pacman -S extra/qwt --noconfirm
-RUN pacman -S community/gnuradio --noconfirm
-RUN pacman -Suy --noconfirm 
+
+# Build tools
+#############
+RUN pacman -Sy extra/cmake extra/qt5-base extra/boost git extra/clang  extra/clazy core/make core/gcc --noconfirm
+RUN pacman -Sy core/openssh which qt5-tools core/gettext community/cppcheck --noconfirm
+
+# libraries
+#############
+RUN pacman -Sy extra/boost-libs   --noconfirm
+
+# Add radio components
+#############
+RUN pacman -Sy extra/qt5-svg extra/qwt community/gnuradio --noconfirm
+
+# Install vnc, xvfb in order to create a 'fake' display.
+#############
+RUN pacman -Sy extra/x11vnc   extra/xorg-twm --noconfirm
+RUN pacman -Syu --noconfirm
 
 #voodoo magic
 #############
